@@ -1,0 +1,18 @@
+Q: what is python?
+* asd1
+* asd2
+* asd3
+* asd4
+=====================
+Q: what is php?
+* test1
+* test2
+* test3
+* test4
+=====================
+Q: what is javascript?
+* asden1
+* asden2
+* asden3
+* asden4
+

@@ -1,0 +1,60 @@
+Q: ماذا تعنى كلمة بايثون?
+$   A
+*   B
+*   C
+*   A and B
+=========================================================
+Q:  What is the main reason the OSI model was created?
+*   To create a layered model larger than the DoD model.
+*   So application developers can change only one layer's protocols at a time.
+$   So different networks could communicate.
+*   So Cisco could use the model.  
+=========================================================
+Q:  Which of the following is private IP address?
+*   12.0.0.1	
+*   168.172.19.39
+*   172.15.14.36	
+$   192.168.24.43
+=========================================================
+Q:  What is the address range of a Class B network address in binary?
+*   01xxxxxx
+*   0xxxxxxx
+$   10xxxxxx
+*   110xxxxx
+=========================================================
+Q:  If your routing table has a static, a RIP, and an IGRP route to the same network, which route will be used to route packets by default?
+*   Any available route
+*   RIP route
+*   Static route
+$   IGRP route
+=========================================================
+Q: What is the disadvantage of fiber-optic cable?
+* Sensitive to outside interference
+$ Expensive hardware
+* Easy to install
+* Limited in bandwidth
+=========================================================
+Q:  What is the frequency range of the IEEE 802.11g standard?
+*   2.4Gbps	
+*   5Gbps
+$   2.4GHz	
+*   5GHz
+=========================================================
+Q:   Routers operate at layer _____. LAN switches operate at layer _____. Ethernet hubs operate at layer _____. Word processing operates at layer _____?
+*   3, 3, 1, 7
+$   3, 2, 1, none
+*   3, 2, 1, 7
+*   3, 3, 2, none
+=========================================================
+Q:  What are the decimal and hexadecimal equivalents for the binary number 10110111?
+*   69/0x2102
+$   183/0xB7
+*   173/0xA6
+*   83/0xC5
+=========================================================
+Q:  What type of RJ45 UTP cable do you use to connect a PC's COM port to a router or switch console port?
+*   Straight-through
+*   Crossover cable
+*   Crossover with a CSU/DSU
+$   Rolled
+=========================================================

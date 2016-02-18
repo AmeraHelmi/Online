@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+{% load static %}
+	<head>
+		<title>Online MCQ website</title>
+		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"  media="all" />
+		<!-- <link href="{% static 'css/css/table.css'%}" rel="stylesheet" type="text/css"  media="all" /> -->
+		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"  media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/responsiveslides.css' %}">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	<script src="{% static 'js/st_courses.js' %}"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{% static 'css/responsiveslides.css' %}">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+
+	</head>
+	<body>
+		<!---start-wrap---->
+		<div class="top-search-bar">
+			<div class="header-top-nav">
+				{% if username  %}	
+				<div>
+					hello, {{username}} 	
+					<a href="/MCQ/logout">log out</a>
+				</div>
+				{% if role == "Instructor" %}
+				<div>you are instructor
+				</div>
+				{% else %}
+				<div>you are not instructor
+				</div>
+				{% endif %}
+				{% else %}
+				<ul>
+					<li>
+						<a href="/MCQ/login">
+							<img src="{% static 'images/marker1.png'%}" title="livehelp" />Login
+						</a>
+					</li>
+					<li>
+						<a href="/MCQ/reg" data-rel="popup">
+							<img src="{% static 'images/marker1.png'%}" title="Blog" />Register
+						</a>
+					</li>
+				</ul>
+				{% endif %}
+			</div>
+		</div>
+		<div class="header">
+			<div class="wrap">
+				<!---start-logo---->
+				<div class="logo">
+					<a href="/MCQ">
+						<img style="height:70px;" src="{% static 'images/Optimum.png' %}"/>
+					</a>
+				</div>
+				<!---end-logo---->
+				<div class="clear"> 
+				</div>
+			</div>
+		</div>
+		<div class="header-nav">
+			<div class="wrap">
+				<div class="left-nav">
+					<ul>
+						<li>
+							<a href="/MCQ">Home</a>
+						</li>
+						<li class="active">
+							<a href="/MCQ/profile">Profile</a>
+						</li>
+						<li>
+							<a href="/MCQ/courses">Courses</a>
+						</li>
+						<li>
+							<a href="/MCQ/contact">Contact</a>
+						</li>
+						{% if role == "Instructor" %}
+						<li>
+							<a href="/MCQ/students">Students</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+				<div class="right-social-icons">
+					<ul>
+						<li>
+							<!-- linkedin -->
+							<a class="icon1" href="#"> </a>
+						</li>
+						<li>
+							<!-- facebook -->
+							<a class="icon2" href="#"> </a>
+						</li>
+						<li>
+							<!-- twitter -->
+							<a class="icon3" href="#"> </a>
+						</li>
+					
+					</ul>
+				</div>
+				<div class="clear"> 
+				</div>
+			</div>
+		</div>
+		<div class="wrap">
+			<div class="content">
+				<div class="services">
+					<div class="listview_1_of_2 images_1_of_2">
+						<div class="listimg listimg_2_of_1">
+							<img src="{% static 'images/001.jpg'%}">
+						</div>
+						<div class="text list_2_of_1">
+							<h3>{{user_obj.user_name}}</h3>
+							<!-- <p>{{student.student_age}}</p>
+							<div class="button">
+								<span>
+									<a href="#">Read More</a>
+								</span>
+							</div> -->
+						</div>
+					</div>
+				</div>	
+				<center>
+				{% if grades.items %}
+					<div >
+								<table class="table">
+							<tr> 
+								<td>
+									Course
+								</td>
+								<td >	
+									Date
+								</td>
+								<td>
+									Grade
+								</td>
+							</tr>
+							{% for grade in grades %}
+							<tr>
+								<td>
+									<center>
+										{{grade.exam.course.course_name}}
+									</center>
+								</td>
+        						<td>
+        							<center>
+        								{{grade.exam_date}}
+        							</center>
+        						</td>
+        						<td>
+        							<center>
+        								{{grade.grade}}
+        							</center>
+        						</td>
+							</tr>
+							{% endfor %}
+						</table>
+					</div>
+					{% else %}
+					<div> 
+					<center>
+						<p>This student has not take any exams</p>
+					</center>
+					</div>
+					{% endif %}
+				</center>
+				<div class="clear"> 
+				</div>
+			</div>
+			<div class="footer" style="margin-top:90px;"> 
+				<div class="footer-left">
+					<ul>
+						<li>
+							<a href="/MCQ">Home</a>
+						</li>
+						<li class="active">
+							<a href="/MCQ/profile">Profile</a>
+						</li>
+						<li>
+							<a href="/MCQ/courses">Courses</a>
+						</li>
+						<li>
+							<a href="/MCQ/contact">Contact</a>
+						</li>
+						{% if role == "Instructor" %}
+						<li>
+							<a href="/MCQ/students">Students</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+				<div class="footer-right">
+					<p>&copy; MCQ ONLINE website</p>
+				</div>
+				<div class=="clear"> 
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

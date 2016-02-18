@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+{% load static %}
+
+	<head>
+		<title>Online MCQ website</title>
+		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"  media="all" />
+		<link rel="stylesheet" href="{% static 'css/responsiveslides.css' %}">
+		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+		<script>
+		    // You can also use "$(window).load(function() {"
+			$(function () {
+				// Slideshow 1
+			    $("#slider1").responsiveSlides({
+			        maxwidth: 1600,
+			        speed: 600
+			    });
+			});
+		</script>
+	</head>
+	<body>
+		<!---start-wrap---->
+	
+			<!---start-header---->
+		<div class="header">
+			<div class="wrap">
+				<!---start-logo---->
+				<div class="logo">
+					<img style="height:70px;" src="{% static 'images/Optimum.png' %}"/>
+				</div>
+				<!---end-logo---->
+				<!---start-search---->
+			
+				<div class="top-search-bar">
+					<div class="header-top-nav">
+					<!-- MCQ if session null or not 
+					 -->
+					 {% if username  %}
+
+						<div>
+						hello, {{username}} 	
+							<a href="/MCQ/logout">log out</a>
+						</div>
+						{% if role == "Instructor" %}
+						<div>you are instructor</div>
+						{% else %}
+						<div>you are not instructor</div>
+						{% endif %}
+
+						{% else %}
+						<ul>
+							<li>
+								<a href="/MCQ/login">
+									<img src="{% static 'images/marker1.png'%}" title="livehelp" />Login
+								</a>
+							</li>
+							<li>
+								<a href="/MCQ/reg" data-rel="popup">
+									<img src="{% static 'images/marker1.png'%}" title="Blog" />Register
+								</a>
+							</li>
+						</ul>
+					{% endif %}
+					</div>
+				</div>
+				<div class="clear"> </div>
+			</div>
+		</div>
+		<div class="clear"> </div>
+		<div class="header-nav">
+			<div class="wrap">
+				<div class="left-nav">
+					<ul>
+						<li class="active">
+							<a href="/MCQ">Home</a>
+						</li>
+						{% if username  %}
+						<li>
+							<a href="/MCQ/profile">Profile</a>
+						</li>
+						{% endif %}
+						<li>
+							<a href="/MCQ/courses">Courses</a>
+						</li>
+						<li>
+							<a href="/MCQ/contact">Contact</a>
+						</li>
+						{% if role == "Instructor" %}
+						<li>
+							<a href="/MCQ/students">Students</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+				<div class="right-social-icons">
+					<ul>
+						<li><a class="icon1" href="#"> </a></li>					
+						<li><a class="icon2" href="#"> </a></li>
+						<li><a class="icon3" href="#"> </a></li>
+						<li><a class="icon4" href="#"> </a></li>
+					</ul>
+				</div>
+				<div class="clear"> </div>
+			</div>
+				<!---start-search---->
+		</div>
+			<!---end-header---->
+			<!--start-image-slider---->
+		<div class="wrap">
+			<div class="image-slider">
+				<!-- Slideshow 1 -->
+				<ul class="rslides" id="slider1">
+					<li>
+						<img src="{% static 'images/slide1.jpg' %}" alt="">
+					</li>
+					<li>
+						<img src="{% static 'images/slide2.jpg' %}" alt="">
+					</li>
+					<li>
+						<img src="{% static 'images/slide1.jpg' %}" alt="">
+					</li>
+				</ul>
+				<!-- Slideshow 2 -->
+			</div>
+				<!--End-image-slider---->
+				<!---start-content---->
+			<div class="content">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id pharetra lorem. Integer sit amet turpis non augue ultricies pretium. Phasellus non porta nibh. Nulla nec sapien euismod libero euismod commodo eu et nibh. Sed tristique dapibus tortor. Maecenas tincidunt viverra lacus, vel tincidunt velit sollicitudin non. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur laoreet diam eu odio consequat malesuada. Ut justo ipsum, convallis sed faucibus sed, porta ut lectus. Phasellus non scelerisque purus, vel malesuada urna. Maecenas eget felis convallis orci luctus placerat. Donec lorem leo, congue sed porta et, dignissim id ligula. Proin ligula risus, varius vitae dui eu, dapibus ornare neque.
+
+					Integer fringilla felis lectus, a molestie ipsum tincidunt sit amet. Vestibulum ac nibh ante. Phasellus vehicula pulvinar metus. Nulla iaculis feugiat enim at sollicitudin. Etiam sit amet ligula et ex viverra lacinia non auctor turpis. Donec scelerisque urna non mi sagittis, vel pretium tortor tempus. Fusce cursus ullamcorper quam, ut dignissim odio mollis vel. Quisque hendrerit commodo lectus ut lacinia. Duis ut euismod lectus, a facilisis velit. Nulla efficitur purus est, a faucibus ex varius ac. Vivamus tellus sapien, viverra nec vestibulum id, iaculis quis tortor. Curabitur vel enim viverra, facilisis urna at, porttitor neque.
+
+					Maecenas sit amet varius diam. Curabitur elit purus, rutrum nec ipsum id, euismod pharetra augue. In quis diam ultrices, euismod velit id, euismod enim. Sed scelerisque semper nisi nec luctus. Etiam magna tellus, elementum et blandit non, ullamcorper nec lectus. Suspendisse dignissim dapibus quam, non ultrices lorem pellentesque a. Donec eu suscipit felis. Ut orci odio, lacinia et blandit sed, feugiat eget mauris. Pellentesque at ante odio. Pellentesque at quam nec dolor fermentum lobortis. Pellentesque euismod lectus turpis, sed ullamcorper arcu commodo vitae. Etiam mattis tellus tempor enim iaculis pretium in vel sapien. Nam feugiat lorem urna, at finibus purus tincidunt eu. Sed odio lectus, maximus a malesuada ut, finibus pellentesque orci. Morbi tempor sem eget urna pellentesque, consectetur tincidunt mi laoreet. 
+					</p>
+				</div>
+				
+					<!---End-content---->
+				<div class="clear"> </div>
+			</div>
+			<div class="footer"> 
+				<div class="wrap"> 
+					<div class="footer-left">
+						<ul>
+							<li class="active">
+								<a href="/MCQ">Home</a>
+							</li>
+							{% if username  %}
+							<li>
+								<a href="/MCQ/profile">Profile</a>
+							</li>
+							{% endif %}
+							<li>
+								<a href="/MCQ/courses">Courses</a>
+							</li>
+							<li>
+								<a href="/MCQ/contact">Contact</a>
+							</li>
+							{% if role == "Instructor" %}
+							<li>
+								<a href="/MCQ/students">Students</a>
+							</li>
+							{% endif %}
+						</ul>
+					</div>
+					<div class="footer-right">
+						<p>&copy; MCQ ONLINE website</p>
+					</div>
+					<div class=="clear"> </div>
+				</div>
+		<!---end-wrap---->
+			</div>
+	</body>
+</html>
+

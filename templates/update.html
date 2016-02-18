@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+{% load static %}
+	<head>
+		<title>Online MCQ website</title>
+		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css"  media="all" />
+		<link href="{% static 'css/update.css'%}" rel="stylesheet" type="text/css"  media="all" />
+		<link rel="stylesheet" href="{% static 'css/responsiveslides.css' %}">
+		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	
+	</head>
+	<body>
+		<!---start-wrap---->
+		<div class="top-search-bar">
+					<div class="header-top-nav">
+					<!-- MCQ if session null or not 
+					 -->
+					 {% if username  %}
+
+						<div>
+						hello, {{username}} 
+							<a href="/MCQ/logout">log out</a>
+						</div>
+						{% if role == "Instructor" %}
+						<div>you are instructor</div>
+						{% else %}
+						<div>you are not instructor</div>
+						{% endif %}
+
+						{% else %}
+						<ul>
+							<li>
+								<a href="/MCQ/login">
+									<img src="{% static 'images/marker1.png'%}" title="livehelp" />Login
+								</a>
+							</li>
+							<li>
+								<a href="/MCQ/reg" data-rel="popup">
+									<img src="{% static 'images/marker1.png'%}" title="Blog" />Register
+								</a>
+							</li>
+						</ul>
+						
+					{% endif %}
+					</div>
+				</div>
+			<!---start-header---->
+			<div class="header">
+				<div class="wrap">
+				<!---start-logo---->
+				<div class="logo">
+					<img style="height:70px;" src="{% static 'images/Optimum.png' %}"/></a>
+				</div>
+				<!---end-logo---->
+				<div class="clear"> </div>
+				</div>
+			</div>
+				<div class="clear"> </div>
+				<div class="header-nav">
+					<div class="wrap">
+					<div class="left-nav">
+					<ul>
+							<li><a href="/MCQ">Home</a></li>
+							<li class="active"><a href="/MCQ/profile">Profile</a></li>
+							<li><a href="/MCQ/courses">Courses</a></li>
+							
+							<li><a href="/MCQ/contact">Contact</a></li>
+							{% if role == "Instructor" %}
+							<li><a href="/MCQ/students">Students</a></li>
+							{% endif %}
+						</ul>
+					</div>
+					<div class="right-social-icons">
+						<ul>
+							<li><a class="icon1" href="#"> </a></li>
+							<li><a class="icon2" href="#"> </a></li>
+							<li><a class="icon3" href="#"> </a></li>
+							<li><a class="icon4" href="#"> </a></li>
+						</ul>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<!---start-search---->
+			</div>
+			<!---end-header---->
+			<div class="wrap">
+					<!---start-content---->
+					<div class="content">
+						<div class="services">
+							<form method="post" action="" class="form-inline" role="form" enctype="multipart/form-data">
+								{% csrf_token %}	
+								<div class="section group" >
+									<div class="grid_1_of_4 images_1_of_4">
+										<img src="{{user.user_img.url}}">
+										<input type="file"  name="uimg" accept="image/*" label="select image"/>
+									</div>
+									<div style="float:left ; margin:75px">
+										<div class="form-group" >
+      										<label for="name">Name</label>
+      										<input type="text" class="form-control" name="uname"  placeholder="{{user.user_name}}">
+      									</div>
+    									<div class="form-group">
+      										<label for="email">Email</label>
+      										<input type="email" class="form-control" name="uemail" ="uemail" placeholder="{{user.user_email}}">
+    									</div>  
+    									<div class="form-group">
+      										<label for="name">Password</label>
+      										<input type="password" class="form-control" name="upass"  placeholder="{{user.user_password}}">
+    									</div>
+    									<div style="margin:30px">
+    										<button type="submit" class="btn btn-default">GO
+    										</button>
+    										<button type="submit" class="btn btn-default" onclick="javascript: form.action='/MCQ/profile/';">cancel
+    										</button>
+    									</div>
+    								</div>
+    							</div>
+    						</form>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+			<div class="footer"> 
+				<div class="wrap"> 
+					<div class="footer-left">
+						<ul>
+							<li>
+								<a href="/MCQ">Home</a>
+							</li>
+							<li class="active">
+								<a href="/MCQ/profile">Profile</a>
+							</li>
+							<li>
+								<a href="/MCQ/courses">Courses</a>
+							</li>
+							<li>
+								<a href="/MCQ/contact">Contact</a>
+							</li>
+							{% if role == "Instructor" %}
+							<li>
+								<a href="/MCQ/students">Students</a>
+							</li>
+							{% endif %}
+						</ul>
+					</div>
+					<div class="footer-right">
+						<p>&copy;MCQ ONLINE WebSite</p>
+					</div>
+					<div class=="clear">
+					</div>
+		<!---end-wrap---->
+				</div>
+		</body>
+</html>
+
